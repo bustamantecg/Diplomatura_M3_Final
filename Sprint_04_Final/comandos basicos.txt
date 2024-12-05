@@ -1,0 +1,16 @@
+intalar depedencias
+===================
+npm install express
+npm install express-validator
+npm install ejs
+npm install express-ejs-layouts
+npm install mongoose
+npm install method-override
+
+
+
+
+correr el servidor
+==================
+node --watch app.mjs
+

@@ -1,0 +1,73 @@
+<section>
+      <div class="card">
+        <div class="card-header">          
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Nuestros Superhéroes</h5>
+          <p class="card-text">Los superhéroes no son solo personajes ficticios, son símbolos de esperanza, inspiración y aspiración . 
+            Representan lo mejor de la humanidad y encarnan las cualidades que todos anhelamos: valentía, altruismo, determinación y justicia.
+            <a href="/api/heroe/crear" class="btn btn-outline-primary" title="Crea un nuevo superhéroe">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+                <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>
+              &nbsp;&nbsp;
+              Nuevo Superhéroe
+            </a>
+          </p>
+            <div class="table-responsive">
+                <table class="table table-info table-striped table-hover caption-top">
+                  <caption>Listado de Superhéroes</caption>
+                    <thead>
+                        <tr>
+                          <th scope="col">Acciones</th>
+                          <th scope="col">Superhéroes</th>
+                          <th scope="col">Identidad</th>
+                          <th scope="col">Edad</th>
+                          <th scope="col">Planeta</th>
+                          <th scope="col">Poderes</th>
+                          <th scope="col">Registrado</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% listaRenderizada.forEach( heroe => { %>
+                        <tr>
+                        <!--  <th><a class="btn btn-danger" href="/api/heroe/delete/<%= heroe._id %>">Eliminar</a></th>   -->
+                          <th>
+                            <a href="/api/heroe/update/<%= heroe._id %>" class="btn btn-warning">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
+                              </svg> 
+                            </a>
+                            &nbsp;&nbsp;
+                            <form action="/api/heroe/delete/<%= heroe._id %>?_method=DELETE" method="POST" 
+                              onsubmit="return confirm('¿Estás seguro de que deseas eliminar este superhéroe?');">
+                              <button class="btn btn-danger" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                </svg>
+                              </button>
+                            </form>                                                     
+                          </th>
+                          <td><%= heroe.Nombre %></td>
+                          <td><%= heroe.Identidad %></td>
+                          <td><%= heroe.Edad %> años</td>
+                          <td><%= heroe.Planeta %></td>
+                          <td><%= heroe.Poderes.join(', ') %></td>
+                          <td><%= heroe.Alta%></td>
+                        </tr>
+                        <% }); %>  
+                      </tbody>
+                </table>
+            </div>
+          <a href="/api/heroe/crear" class="btn btn-outline-primary" title="Crea un nuevo superhéroe">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+              <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+              <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+            &nbsp;
+            Nuevo Superhéroe</a>
+        </div>
+      </div>  
+</section>

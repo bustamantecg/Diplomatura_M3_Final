@@ -1,0 +1,70 @@
+para alta:
+  {
+    "id": 101,
+
+    "nombreSuperHeroe": "Wolverine101",
+
+    "nombreReal": "Wolverine Ni idea",
+    "edad": 55,
+    "planetaOrigen": "Tierra",
+    "debilidad": "alcohol",
+    "poderes": [
+      "garraz afilidas",      
+      "pelea"
+    ],
+    "aliados": [
+      "Deadpool"
+    ],
+    "enemigos": [
+      "samurai"
+    ]
+  }
+
+  otro ejemplo
+      {
+        "_id": "674508389a14ab2e821714b5",
+        "Nombre": "Mujer Maravilla",
+        "Nombre Real": "Diana Prince",
+        "Edad": 3000,
+        "Planeta de Origen": "Themyscira",
+        "Debilidad": "Ataduras mágicas",
+        "Poderes": [
+            "Fuerza sobrehumana",
+            "Vuelo",
+            "Lazo de la verdad",
+            "Inmortalidad"
+        ],
+        "Aliados": [
+            "Batman",
+            "Superman"
+        ],
+        "Enemigos": [
+            "Ares",
+            "Cheetah"
+        ]
+    }
+
+    {
+    "_id": "672cfd3a1df48de19636ff8c", // insertar sin este campo porque lo crea mongoDB
+    "Nombre": "Superman",
+    "Nombre Real": "Clark Kent",
+    "Edad": 35,
+    "Planeta de Origen": "Krypton",
+    "Debilidad": "Kryptonita",
+    "Poderes": [
+        "Super fuerza",
+        "Vuelo",
+        "Visión láser",
+        "Invulnerabilidad",
+        "Súper velocidad"
+    ],
+    "Aliados": [
+        "Batman",
+        "Wonder Woman"
+    ],
+    "Enemigos": [
+        "Lex Luthor",
+        "Doomsday"
+    ]
+}
+
