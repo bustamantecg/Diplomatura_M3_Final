@@ -8,7 +8,8 @@ import methodOverride from 'method-override';
 import { body } from 'express-validator';
 
 const app = express();
-const PORT = 3000;
+//const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 connectDB();
 
 app.use(express.json());
